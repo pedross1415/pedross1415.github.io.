@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas</title>
+    <link rel="stylesheet" href="receitas.css">
+</head>
+<body>
+    <div class="ad1">
+        <div class="column1">
+            <img src="./public/images/receitas/receita-bolo.jpg" alt="">
+            <div class="div-ingredientes">
+                <h1> Ingredientes </h1>
+                <ol>
+                    <li>6 cebolas</li>
+                    <li>2 xícaras de farinha de trigo</li>
+                    <li>Orégano à gosto (opcional)</li>
+                    <li>2 ovos</li>
+                    <li>1 xícara de água geladar</li>
+                    <li>Óleo para frita</li>
+                </ol>
+            </div>
+            <div class="div-preparo">
+                <h1>Modo de preparo</h1>
+                <p>Descasque as cebolas e corte rodelas de aproximadamente 1cm de espessura.</p>
+
+                <p>Solte os anéis e mergulhe-os na mistura de água gelada, sal e vinagre. Deixe descansar por 15 minutos.</p>
+
+                <p>Separe as claras das gemas dos ovos e bata as claras em ponto de neve.</p>
+
+                <p>Adicione as gemas às claras e bata até obter consistência.</p>
+
+                <p>Acrescente o sal, pimenta, orégano e a farinha de trigo e misture delicadamente para obter uma mistura homogênea.</p>
+
+                <p>Em outro recipiente, coloque a farinha de rosca. Seque os anéis de cebola com a ajuda de guardanapos para que eles fiquem bem secos. Mergulhe os anéis na massa e então na farinha de rosca.</p>
+
+                <p>Coloque-os direto no óleo quente, evitando colocar um sobre o outro.</p>
+
+                <p>Frite os anéis por 8 minutos à 200º.Os anéis estão prontos.</p>
+
+                <p>Mergulhe-os no molho de sua preferência e bom apetite!</p>
+            </div>
+        </div>
+        <div class="column2">
+            <div id="cart">
+                <h2>Carrinho de Compras</h2>
+                <p>Quantidade total de produtos: <span id="somaTotal">0</span></p>
+                <p>Valor total: R$ <span id="valorTotal">0,00</span></p>
+                <button> Finalizar compra</button>
+            </div>
+            <h1>Itens da receita</h1>
+            <div class="itens">
+                <p>2 itens</p>
+                <button>Comprar a lista completa</button>
+            </div>
+
+            <div class="div-produtos-box">
+                <img src="./public/images/products/cereais_farinaceos/farinha.jpg" alt="farinha" class="product-image">
+                <p class="product-description">Farinha De Trigo Veneranda 1kg</p>
+                <p class="product-price">R$ 4,99</p>
+                <div class="produto-container">
+                    <input type="number" class="produto" data-valor="4.99" value="0" min="0" max="20">
+                    <button class="add-button">Adicionar</button>
+                    <div class="controls">
+                        <button class="control-button minus">-</button>
+                        <button class="control-button plus">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-produtos-box">
+                <img src="./public/images/products/mercearia/cebola.jpg" alt="farinha" class="product-image">
+                <p class="product-description">Cebola 500gr</p>
+                <p class="product-price">R$ 3,00</p>
+                <div class="produto-container">
+                    <input type="number" class="produto" data-valor="3.00" value="0" min="0" max="20">
+                    <button class="add-button">Adicionar</button>
+                    <div class="controls">
+                        <button class="control-button minus">-</button>
+                        <button class="control-button plus">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-produtos-box">
+                <img src="./public/images/products/mercearia/oleo.jpg" alt="farinha" class="product-image">
+                <p class="product-description">Óleo Soja Soya Pet 900ml</p>
+                <p class="product-price">R$ 6,69</p>
+                <div class="produto-container">
+                    <input type="number" class="produto" data-valor="6.69" value="0" min="0" max="20">
+                    <button class="add-button">Adicionar</button>
+                    <div class="controls">
+                        <button class="control-button minus">-</button>
+                        <button class="control-button plus">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-produtos-box">
+                <img src="./public/images/products/hortifruti/ovo.jpg" alt="farinha" class="product-image">
+                <p class="product-description">Ovos Bandeija C/20und Horst Branco</p>
+                <p class="product-price">R$ 9,99</p>
+                <div class="produto-container">
+                    <input type="number" class="produto" data-valor="6.69" value="0" min="0" max="20">
+                    <button class="add-button">Adicionar</button>
+                    <div class="controls">
+                        <button class="control-button minus">-</button>
+                        <button class="control-button plus">+</button>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+
+
+
+        </div>
+    </div>
+    
+
+    <script src="./carrinho.js"></script>
+</body>
+</html>

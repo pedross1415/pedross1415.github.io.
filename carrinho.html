@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantidade e Valor Totais Dinâmicos</title>
+    <style>
+        /* Contêiner para cada produto e seus controles */
+        .produto-container {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        /* Estilo para o input, escondido por padrão */
+        .produto {
+            width: 60px;
+            text-align: center;
+            display: none;
+        }
+        /* Estilo para o input quando está ativo */
+        .produto.active {
+            display: inline-block;
+        }
+        /* Estilo para o botão "Adicionar" */
+        .add-button {
+            width: 60px;
+            height: 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+            display: inline-block;
+        }
+        /* Controles de "Mais" e "Menos", escondidos por padrão */
+        .controls {
+            display: none;
+            align-items: center;
+            margin-left: 10px;
+        }
+        /* Torna os controles visíveis quando necessário */
+        .controls.visible {
+            display: inline-flex;
+        }
+        /* Estilo para os botões de controle */
+        .control-button {
+            background-color: #ddd;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Contêiner para cada input com seus controles -->
+        <div class="produto-container">
+            <input type="number" class="produto" data-valor="10" value="0" min="0" max="20">
+            <button class="add-button">Adicionar</button>
+            <div class="controls">
+                <button class="control-button minus">-</button>
+                <button class="control-button plus">+</button>
+            </div>
+        </div>
+        <!-- Repita a estrutura acima para outros inputs -->
+        <p>Quantidade total de produtos: <span id="somaTotal">0</span></p>
+        <p>Valor total: R$ <span id="valorTotal">0,00</span></p>
+    </div>
+    <script>
+        // Função para atualizar a quantidade total e o valor total
+        function atualizarResultados() {
+            let containers = document.querySelectorAll('.produto-container');
+            let quantidadeTotal = 0;
+            let valorTotal = 0;
+        
+            containers.forEach(container => {
+                let input = container.querySelector('.produto');
+                let addButton = container.querySelector('.add-button');
+                let controls = container.querySelector('.controls');
+                let quantidade = parseInt(input.value) || 0;
+                let valor = parseFloat(input.dataset.valor);
+        
+                // Mostrar ou esconder o botão "Adicionar" com base no valor do input
+                if (quantidade === 0) {
+                    input.style.display = 'none';
+                    addButton.style.display = 'inline-block';
+                    controls.classList.remove('visible');
+                } else {
+                    input.style.display = 'inline-block';
+                    addButton.style.display = 'none';
+                    controls.classList.add('visible');
+                }
+
+                // Atualizar a quantidade total e o valor total
+                if (quantidade > 0) {
+                    quantidadeTotal += quantidade;
+                    valorTotal += quantidade * valor;
+                }
+            });
+        
+            // Atualizar o display dos totais na página
+            document.getElementById("somaTotal").textContent = quantidadeTotal;
+            document.getElementById("valorTotal").textContent = valorTotal.toFixed(2).replace('.', ',');
+        }
+        
+        // Adiciona eventos de input para atualizar resultados ao modificar o valor do input
+        document.querySelectorAll('.produto').forEach(input => {
+            input.addEventListener('input', atualizarResultados);
+        });
+
+        // Adiciona eventos de clique para os botões de "Mais"
+        document.querySelectorAll('.plus').forEach(button => {
+            button.addEventListener('click', function() {
+                let container = this.closest('.produto-container');
+                let input = container.querySelector('.produto');
+                input.value = parseInt(input.value) + 1;
+                input.dispatchEvent(new Event('input'));
+            });
+        });
+
+        // Adiciona eventos de clique para os botões de "Menos"
+        document.querySelectorAll('.minus').forEach(button => {
+            button.addEventListener('click', function() {
+                let container = this.closest('.produto-container');
+                let input = container.querySelector('.produto');
+                if (parseInt(input.value) > 0) {
+                    input.value = parseInt(input.value) - 1;
+                    input.dispatchEvent(new Event('input'));
+                }
+            });
+        });
+
+        // Adiciona eventos de clique para o botão "Adicionar"
+        document.querySelectorAll('.add-button').forEach(button => {
+            button.addEventListener('click', function() {
+                let input = this.previousElementSibling;
+                input.value = 1; // Define um valor inicial de 1 quando o botão é clicado
+                input.style.display = 'inline-block';
+                this.style.display = 'none';
+                let controls = this.nextElementSibling;
+                controls.classList.add('visible');
+                input.dispatchEvent(new Event('input'));
+            });
+        });
+
+        // Inicializa a visibilidade dos botões ao carregar a página
+        atualizarResultados();
+    </script>
+</body>
+</html>

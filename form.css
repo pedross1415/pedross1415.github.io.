@@ -1,0 +1,319 @@
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+
+}
+
+form {
+    background: linear-gradient(to bottom, #fff, #ddd);
+    display: grid;
+    margin: 0 auto;
+    width: 35%;
+    height: auto;
+    box-sizing: border-box; /* Inclui padding e border no cálculo de largura/altura */
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 5px;
+}
+
+
+.container1 {
+    background-color: #218838;
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 9rem;
+}
+
+.div-sentence {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    align-items:center;
+}
+
+.div-sentence p {
+    padding-left: 10%;
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: 110%;
+    width: 70%;
+
+}
+
+.div-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+    height: 100%;
+}
+
+.div-logo img {
+    width: 50%;
+    height: 50%;
+}
+
+.div-language {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 select {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.container1 option {
+    color: black;
+}
+
+
+.container2 {
+    display: flex;
+    width: 100%;
+    height: 30rem;
+    padding-top: 3%;
+    font-size: 1.2rem;
+}
+
+.div1-container2, .div2-container2 {
+    width: 50%;
+    display: grid;
+    justify-content: center;
+
+}
+
+.container2 label {
+    font-weight: bold;
+}
+
+.container2 input {
+    width: 110%;
+    height: 25%;
+    padding-top: 5%;
+    border: none;
+    border-bottom: 2px solid #bbb;
+    outline: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+
+
+
+
+.container3 {
+    display: grid;
+    width: 100%;
+    height: 10rem;
+}
+
+.div1-container3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 8rem;
+}
+
+.div2-container3 {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 2rem;
+}
+
+.div-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.div-checkbox input {
+
+}
+
+.div-btn {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+
+.div-btn button {
+    background-color: #218838;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 120%;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    height: 50px;
+    width: 60%;
+}
+
+.div-btn button:hover {
+    background: linear-gradient(45deg, #0070cc, #0057e7);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.div-btn button:active {
+    background: linear-gradient(45deg, #0077b3, #003d7a);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+
+
+/* RESPONSIVIDADE */
+
+/* Media Query para telas pequenas */
+    @media (max-width: 575px) {
+
+        body {
+            margin: 0;
+        }
+
+        form {
+            width:100vw;
+            height: 80vh;
+        }
+
+        .container1 {
+            height: 160px;
+        }
+        
+        .sentence {
+            width: 60%;
+            height: 15%;
+        }
+        
+        
+        .div-logo img {
+            width: 25%;
+            height: 35%;
+        }
+        
+        .div-language {
+            padding-right: 5%;
+            width: 25%;
+            height: 50%;
+        }
+        
+        .container1 select {
+            background: none;
+            border: none;
+            color: white;
+        }
+        
+        .container1 option {
+            color: black;
+        
+         
+        }
+        
+        
+        .container2 {
+        }
+        
+        .div1-container2, .div2-container2 {
+            width: 100%;
+            gap: 15%;
+        }
+        
+        .container2 label {
+            font-size: 100%;
+            font-weight: bold;
+        }
+        
+        .container2 input {
+            width: 100%;
+            height: 50%;
+            border: none;
+            border-bottom: 2px solid #bbb;
+            outline: none;
+            background-color: transparent;
+            font-size: 110%;
+            padding-top: 10%;
+        }
+        
+        
+        
+        
+        
+        .container3 {
+            display: grid;
+            align-items: center;
+            width: 100%;
+            height: 225px;
+        }
+        
+        .div1-container3 {
+            display: flex;
+            justify-content: center;
+            padding-top: 12%;
+        }
+        
+        .div2-container3 {
+            display: flex;
+            justify-content: left;
+            padding: 5% 0 0 15%;
+            width: 100%;
+            display: flex;
+            gap: 10%;
+        }
+        
+        .container3 button {
+
+        }
+        
+        .container3 button:hover {
+            background: linear-gradient(45deg, #0070cc, #0057e7);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .container3 button:active {
+            background: linear-gradient(45deg, #0077b3, #003d7a);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transform: translateY(1px);
+        }
+    }
+
+
+
+    /* Dispositivos móveis em geral (576px a 767px) */
+    @media (min-width: 576px) and (max-width: 767px) {
+        /* Estilos para dispositivos móveis */
+    }
+
+    /* Tablets (768px a 991px) */
+    @media (min-width: 768px) and (max-width: 991px) {
+        /* Estilos para tablets */
+    }
+
+    /* Laptops e desktops pequenos (992px a 1199px) */
+    @media (min-width: 992px) and (max-width: 1199px) {
+        /* Estilos para laptops e desktops pequenos */
+    }
+
+    /* Desktops médios (1200px a 1399px) */
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        /* Estilos para desktops médios */
+    }
+
+    /* Desktops grandes (1400px e acima) */
+    @media (min-width: 1400px) {
+        /* Estilos para desktops grandes */
+    }

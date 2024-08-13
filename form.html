@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0, minimum-scale=0.75, maximum-scale=1.5, user-scalable=yes">
+    <title> Formulário </title>
+    <link rel="stylesheet" href="form.css">
+
+</head>
+
+<body>
+
+    <main>
+        <form action="/form" method="POST">
+
+            <div class="container1">
+                <div class="div-sentence">
+                    <p> Não perca tempo! Crie sua conta e aproveite já </p>
+                </div>
+                <div class="div-logo">
+                    <img src="./public/images/logo_carrinho.png" alt="">
+                </div>
+                <div class="div-language">
+                    <label for="language">Idioma</label>
+                    <select id="language">
+                        <option value="opcao1">Português</option>
+                        <option value="opcao2">English</option>
+                        <option value="opcao3">Español</option>
+                        <option value="opcao4">日本語</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container2">
+                <div class="div1-container2">
+                    <div>
+                        <label for="name"> Nome </label>
+                        <br>
+                        <input type="text" id="name" name="name" placeholder="Digite seu Nome">
+                    </div>
+                    <div>
+                        <label for="date"> Data de Nascimento </label>
+                        <br>
+                        <input type="date" name="date_birth" id="date" required>
+                    </div>
+                    <div>
+                        <label for="email"> E-mail </label>
+                        <br>
+                        <input type="email" id="email" name="email" placeholder="Digite seu E-mail">
+                    </div>
+                    <div>
+                        <label for="password"> Senha </label>
+                        <br>
+                        <input type="password" id="password" name="password" placeholder="Digite sua Senha">
+                    </div>
+                    <div>
+                        <label for="confirm"> Confirmar Senha </label>
+                        <br>
+                        <input type="password" id="confirm" name="confirm" placeholder="Confirme sua Senha">
+                    </div>
+
+                </div>
+
+                <div class="div2-container2">
+                    <div>
+                        <label for="lastname"> Sobrenome </label>
+                        <br>
+                        <input type="text" id="lastname" name="lastname" placeholder="Digite seu Sobrenome">
+                    </div>
+
+                    <div>
+                        <label for="cpf">CPF</label>
+                        <br>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                    </div>
+
+                    <div>
+                        <label for="tel"> Telefone </label>
+                        <br>
+                        <input type="tel" id="phone" name="phone" placeholder="Número de Telefone ou Celular">
+                    </div>
+
+
+                    <div>
+                        <p>Segurança da Senha</p>
+                    </div>
+
+                    <div class="select-gender">
+                        <label for="gender">Sexo</label>
+                        <br>
+                        <select id="gender" name="gender">
+                            <option value="prefiro não dizer">Prefiro não dizer</option>
+                            <option value="Homem">Homem</option>
+                            <option value="Mulher">Mulher</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container3">
+                <div class="div1-container3">
+                    <div class="div-checkbox">
+                        <label for="terms"> Li e aceito os termos de uso </label>
+                        <input type="checkbox" id="terms" name="terms">
+                    </div>
+                    <div class="div-btn">
+                        <button type="submit" class="submit-btn">Criar Conta</button>
+                    </div>
+                </div>
+
+                <div class="div2-container3">
+                        <p>Já tem uma conta? <a href="#"> Fazer login </a> </p>
+                </div>
+
+            </div>
+
+        </form>
+    </main>
+
+
+</body>
+</html>
